@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+
+</head>
+
+	<style>
+	#clock {
+		font-size: 7em;
+		font-family: monospace;
+		text-align: center;
+		margin-top: 50px;
+	}
+	#currentTemp{
+		font-size: 4em;
+		font-family: monospace;
+		text-align: center;
+		margin-top: 50px;
+	}
+	html, body {
+		margin: 0;
+		display: flex;
+		flex-direction: column; /* 🔧 cambia da default row a colonna */
+		justify-content: center;
+		align-items: center;
+		font-family: Mono;
+
+	}
+
+	table {
+		border-collapse:collapse
+	}
+
+
+	button {
+		border: none;
+		color: white;
+		background: black;
+		padding: 15px 15px;
+		text-align: center;
+		text-decoration: none;
+		font-size: 16px;
+		cursor: pointer;
+
+	}
+
+	
+   	#search-container {
+		margin-top: 20px;
+        }
+        input[type="text"] {
+		padding: 10px;
+		font-size: 16px;
+    		width: 700px; /* Larghezza fissa */
+        }
+
+	body.dark-mode {
+  		background-color: #121212;
+  		color: #ffffff;
+	}
+
+	body.dark-mode table {
+	  background-color: #121212;
+	  color: #fff;
+	}
+
+	body.dark-mode button {
+	  background-color: #333;
+	  color: #fff;
+	}
+  
+	</style>
+
+<body>
+
+<script src="calendar.js"></script>
+
+<table>
+<tr><th><h1 id = "Year"></h1><h1 id = "Month"></h1></th>
+</tr>
+<tr><th><div id="container"></div></th><th> <p>&nbsp;&nbsp;&nbsp;</p> </th><td> <div id="clock">--:--:--</div> <div id ="currentTemp">26 °C</div>  </td>
+</tr>
+<tr>
+<th>
+<br></th>
+</tr>
+<tr>
+<th>
+<button onclick="prev()"><<</button>&nbsp;;&nbsp;<button onclick="next()">>></button></th>
+</tr>
+</table> 
+<p>&nbsp;&nbsp;</p>
+
+<button id="dm_bt" onclick="toggleDarkMode()"></button>
+
+<div id="search-container">
+    <form id="search-form">
+        <input type="text" id="search-input" placeholder="Cerca...">
+    </form>
+</div>
+
+
+
+<script>
+
+function aggiornaOrologio() {
+	const ora = new Date();
+	const ore = ora.getHours().toString().padStart(2, '0');
+	const minuti = ora.getMinutes().toString().padStart(2, '0');
+	const secondi = ora.getSeconds().toString().padStart(2, '0');
+
+	document.getElementById("clock").textContent = `${ore}:${minuti}:${secondi}`;
+}
+
+aggiornaOrologio(); // subito
+setInterval(aggiornaOrologio, 1000); // ogni secondo
+
+</script>
+
+</body>
+</html>
