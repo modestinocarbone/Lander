@@ -1,6 +1,6 @@
 # What is Lander?
 
-Lander is a lightweight HTML + JavaScript landing page that you can place in your /Documents/ or /Desktop/ folder. It’s designed to be used as a clean start page for your browser—perfect for replacing that boring default homepage.
+Lander is a lightweight HTML + JavaScript landing page that you can place in your /Documents/ or /Desktop/ folder. It’s designed to be used as a clean start page for your browser, perfect for replacing that boring default homepage.
 
 # How does Lander look?
 
